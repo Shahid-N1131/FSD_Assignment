@@ -1,0 +1,56 @@
+Difference between HTTP1.1 vs HTTP2 :
+
+•	Delivery Models :
+
+    HTTP/1.1 sends messages as plain text.
+    HTTP/2 encodes them into binary data and arranges them carefully. 
+
+This implies that HTTP/2 can have various delivery models.
+
+Framing Layer :
+
+•	HTTP/1.1 addresses this problem by creating a persistent connection between server
+    and client. Until explicitly closed, this connection will remain open. So, the client can use one TCP connection throughout the communication sans interrupting it again and again. This approach surely ensures good performance, but it also is problematic. We can conclude that multiple TCP connections are essential.
+•	HTTP/2 developers introduced a binary framing layer. This layer partitions requests
+    and responses in tiny data packets and encodes them. Due to this, multiple requests and responses become able to run parallelly with HTTP/2 and chances of HOL blocking are bleak.
+
+Compression :
+
+•	HTTP/1.x uses formats like gzip to compress the data transferred in the messages. However, the
+    header component of the message is always sent as plain text. Though the header itself is small, it gets larger due to the use of cookies or an increased number of requests.
+
+•	HTTP/2 uses HPACK compression to decrease the average size of the header. This compression program
+    encodes the header metadata using Huffman coding, which significantly reduces its size as a result. In addition, HPACK keeps track of previously transferred header values and further compresses them as per a dynamically modified index shared between client and server.
+
+Conclusion :
+
+•	The core features of HTTP/2 provide greater levels of control that can be used to optimize the web
+    application performance.
+
+*********************************************************************************************************
+
+OBJECTS :
+
+In JavaScript, almost "everything" is an object.
+•	Booleans can be objects (if defined with the new keyword)
+•	Numbers can be objects (if defined with the new keyword)
+•	Strings can be objects (if defined with the new keyword)
+•	Dates are always objects
+•	Maths are always objects
+•	Regular expressions are always objects
+•	Arrays are always objects
+•	Functions are always objects
+•	Objects are always objects
+All JavaScript values, except primitives, are objects.
+JavaScript variables can also contain many values.
+Objects are variables too. But objects can contain many values.
+Object values are written as Key : value pairs (name and value separated by a colon).
+    
+    Syntax :
+    
+        var objectname = {Key:Value};
+
+*********************************************************************************************************
+
+
+
